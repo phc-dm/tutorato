@@ -1,0 +1,62 @@
+---
+const years = await Astro.glob("../pages/archivio/*/index.md");
+const yearLabels = years.map((module) => module.file.split("/").at(-2)).toSorted();
+const currentYear = yearLabels.at(-1);
+
+const { selectedCourseLabel, courses } = Astro.props;
+const title = courses.find((module) => module.file.includes("index.md")).frontmatter
+    .title;
+const selectedYear = courses
+    .find((module) => module.file.includes("index.md"))
+    .file.split("/")
+    .at(-2);
+const isCurrentYear = currentYear == selectedYear;
+const coursesWithoutIndex = courses.filter((m) => !m.file.includes("index.md"));
+---
+
+<header>
+    <h1>
+        {
+            isCurrentYear ? (
+                <a href="/">{title}</a>
+            ) : (
+                <a href={`/archivio/${selectedYear}`}>{title}</a>
+            )
+        }
+    </h1>
+    <nav>
+        <ul>
+            {
+                yearLabels.slice(0, -1).map((year) => (
+                    <li class:list={{ active: year === selectedYear }}>
+                        <a href={`/archivio/${year}`}>{year}</a>
+                    </li>
+                ))
+            }
+            <li class:list={{ active: currentYear === selectedYear }}>
+                <a href={"/"}>{currentYear}</a>
+            </li>
+        </ul>
+        <ul>
+            {
+                coursesWithoutIndex.map((course) => (
+                    <li
+                        class:list={{
+                            active: selectedCourseLabel === course.file.split("/").at(-1),
+                        }}
+                    >
+                        <a
+                            href={
+                                isCurrentYear
+                                    ? "/" + course.url.split("/").at(-1)
+                                    : course.url
+                            }
+                        >
+                            {course.frontmatter.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>

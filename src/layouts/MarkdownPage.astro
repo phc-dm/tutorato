@@ -1,0 +1,23 @@
+---
+import Base from "./Base.astro";
+
+const years = await Astro.glob("../pages/archivio/*/index.md");
+const currentYear = years
+    .map((module) => module.file.split("/").at(-2))
+    .toSorted()
+    .at(-1);
+const {
+    file,
+    frontmatter: { title },
+} = Astro.props;
+const selectedCourseLabel = file.split("/").at(-1);
+
+const allCourses = await Astro.glob(`../pages/archivio/*/*`);
+const courses = allCourses.filter((module) =>
+    module.file.includes(file.split("/").at(-2)),
+);
+---
+
+<Base title={title} courses={courses} selectedCourseLabel={selectedCourseLabel}>
+    <slot />
+</Base>

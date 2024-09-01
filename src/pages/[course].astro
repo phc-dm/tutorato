@@ -1,0 +1,30 @@
+---
+export async function getStaticPaths() {
+    const years = await Astro.glob("./archivio/*/index.md");
+    const currentYear = years
+        .map((module) => module.file.split("/").at(-2))
+        .toSorted()
+        .at(-1);
+
+    const allCourses = await Astro.glob(`./archivio/*/*`);
+    const courses = allCourses.filter((module) => module.file.includes(currentYear));
+
+    return courses.map((module) => {
+        const course = module.file.split("/").at(-1).split(".")[0];
+        return {
+            params: {
+                course,
+            },
+            props: {
+                module,
+            },
+        };
+    });
+}
+
+const {
+    module: { Content },
+} = Astro.props;
+---
+
+<Content />
