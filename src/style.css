@@ -66,6 +66,16 @@ table {
     th {
         font-weight: bold;
     }
+
+    @media screen and (max-width: 50rem) {
+        width: 100%;
+        max-width: auto;
+
+        th,
+        td {
+            min-width: auto;
+        }
+    }
 }
 
 /* Components */
@@ -76,7 +86,7 @@ body {
     font-family: 'Computer Modern Serif', sans-serif;
     text-rendering: optimizeLegibility;
 
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1;
     color: #333;
     background-color: #fffafa;
@@ -89,22 +99,22 @@ body {
     padding-bottom: 8rem;
 
     header {
-        height: 8rem;
         width: 100%;
 
         background-color: #a00;
         color: #fff;
 
-        display: grid;
-        grid-template-columns: auto auto;
-        place-content: center;
+        display: flex;
+        flex-wrap: wrap;
 
-        gap: 1rem;
+        place-content: center;
+        column-gap: 1rem;
+        row-gap: 1.5rem;
 
         align-content: end;
         align-items: end;
 
-        padding-bottom: 1.25rem;
+        padding: 6rem 1rem 1.25rem;
 
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.125);
 
@@ -113,19 +123,13 @@ body {
             font-family: 'Computer Modern Serif', sans-serif;
         }
 
-        nav {
+        ul {
             display: grid;
-            grid-template-columns: auto auto;
-            gap: 4rem;
+            grid-auto-flow: column;
 
-            ul {
-                display: grid;
-                grid-auto-flow: column;
+            list-style: none;
 
-                list-style: none;
-
-                gap: 1rem;
-            }
+            gap: 1rem;
         }
 
         a {
@@ -147,6 +151,15 @@ body {
         h1 > a {
             font-size: 42px;
         }
+
+        @media screen and (min-width: 50rem) {
+            > :nth-child(1) {
+                padding-left: 2rem;
+            }
+            > :nth-child(2) {
+                padding-right: 2rem;
+            }
+        }
     }
 
     main {
@@ -163,7 +176,7 @@ body {
 
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 
-        text-align: justify;
+        /* text-align: justify; */
         hyphens: auto;
 
         line-height: 1.65;
@@ -183,6 +196,30 @@ body {
             li + li {
                 margin-top: 1rem;
             }
+        }
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 50rem) {
+    body {
+        gap: 3rem;
+        padding-bottom: 3rem;
+
+        > header {
+            padding: 3rem 1rem 1.25rem;
+
+            > ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        > main {
+            width: calc(100vw - 2rem);
+            padding: 1rem;
         }
     }
 }
