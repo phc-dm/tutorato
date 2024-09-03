@@ -3,8 +3,6 @@ layout: ../../../layouts/MarkdownPage.astro
 title: Aritmetica
 ---
 
-## Info
-
 **Tutor:** Cristofer Villani.
 
 Il tutorato di Aritmetica si è concluso. Sotto trovate i pdf di alcuni dei tutorati svolti.

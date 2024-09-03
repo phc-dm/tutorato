@@ -1,8 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownPage.astro
-title: Tutorato 2023/2024
+title: Tutorato 2023-2024
 ---
-
 
 ## Che cos'è il tutorato?
 

@@ -3,9 +3,6 @@ layout: ../../../layouts/MarkdownPage.astro
 title: Algebra I
 ---
 
-
-## Info
-
 **Tutor:** Cristofer Villani.
 
 Il tutorato si è concluso. Sotto trovate gli esercizi assegnati nei vari incontri e due simulazioni d'esame.

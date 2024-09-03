@@ -3,8 +3,6 @@ layout: ../../../layouts/MarkdownPage.astro
 title: Analisi 1
 ---
 
-## Info
-
 **Tutor:** Stefano Mannella.
 
 Durante le ore di tutorato proveremo innanzitutto a rispondere alle domande ed ai dubbi che possono essere sorti in classe.

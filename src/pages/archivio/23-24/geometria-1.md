@@ -3,7 +3,6 @@ layout: ../../../layouts/MarkdownPage.astro
 title: Geometria I
 ---
 
-## Info
 **Tutor:** Marco Tavano.
 
 ## Soluzioni dei Test

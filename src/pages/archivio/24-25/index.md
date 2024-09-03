@@ -13,8 +13,6 @@ Per tutte le materie, sono a disposizione quattro tutor alla pari, che faranno t
 
 Venire a tutorato è utilissimo per darvi un'idea più chiara del vostro livello di conoscenza degli argomenti, e può servire a indirizzarvi nello studio. Ovviamente, non è necessario (e può essere controproducente!) che veniate a _ogni_ tutorato, ma se sentite il bisogno di consolidare le vostre conoscenze, oppure siete in difficoltà con qualche argomento, non fatevi problemi a venire!
 
-
-
 ## Orario
 
 |  | Lun | Mar | Mer | Gio | Ven |
@@ -22,5 +20,5 @@ Venire a tutorato è utilissimo per darvi un'idea più chiara del vostro livello
 |9-11|  |   |   |  |  |
 |11-13|	 |   |   |  | |
 |14-16|	 |  | | |  |
-|16-18|	Alla Pari<br> Aula 2  | | | Alla pari<br> Aula 2 | |
+|16-18|	Alla Pari<br>Aula 2  | | | Alla pari<br>Aula 2 | |
 |18-20|  |   |   |  |  |

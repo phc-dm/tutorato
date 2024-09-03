@@ -1,7 +1,9 @@
 ---
-import Header from "../components/Header.astro";
+import '../style.css'
 
-const { title, courses, selectedCourseLabel } = Astro.props;
+import Header from '../components/Header.astro'
+
+const { title, courses, selectedCourseLabel } = Astro.props
 ---
 
 <!doctype html>
@@ -26,21 +28,21 @@ const { title, courses, selectedCourseLabel } = Astro.props;
             integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk"
             crossorigin="anonymous"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener('DOMContentLoaded', function () {
                 // @ts-ignore
                 renderMathInElement(document.body, {
                     // customised options
                     // • auto-render specific keys, e.g.:
                     delimiters: [
-                        { left: "$$", right: "$$", display: true },
-                        { left: "$", right: "$", display: false },
-                        { left: "\\(", right: "\\)", display: false },
-                        { left: "\\[", right: "\\]", display: true },
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false },
+                        { left: '\\(', right: '\\)', display: false },
+                        { left: '\\[', right: '\\]', display: true },
                     ],
                     // • rendering keys, e.g.:
                     throwOnError: false,
-                });
-            });
+                })
+            })
         </script>
         <title>{title}</title>
     </head>
