@@ -1,0 +1,46 @@
+kind: pipeline
+name: default
+
+steps:
+- name: deploy
+  image: node:latest
+  volumes:
+  - name: host-tutorato-dist
+    path: /drone/src/dist
+  environment:
+    BASE_URL:
+      from_secret: base_url
+  commands:
+  - pwd
+  - npm install
+  - npm run build
+
+volumes:
+- name: host-tutorato-dist
+  host:
+    path: /var/www/tutorato
+
+trigger:
+  branch:
+  - main
+  event:
+  - push
+
+---
+kind: pipeline
+type: exec
+name: caddy-permissions
+
+depends_on:
+- default
+
+steps:
+- name: chown
+  commands:
+  - chown -R caddy:caddy /var/www/tutorato 
+
+trigger:
+  branch:
+  - main
+  event:
+  - push
